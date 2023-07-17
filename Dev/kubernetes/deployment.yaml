@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: dev
+  labels:
+    app: dev
+spec:
+  selector:
+    matchLabels:
+      app: dev
+  template:
+    metadata:
+      labels:
+        app: dev
+        name: dev
+    spec:
+      containers:
+        - name: dev
+          image: bheemeshkammak/Unique/dev
+          imagePullPolicy: Always
+        
+          ports:
+        
+        
+        
