@@ -1,0 +1,39 @@
+
+
+
+    
+# Curl commands for REST Server resource Prem
+# Post
+curl -X POST -H "Content-Type: application/json" \
+-d '{"Trisha": "sample string","INR": defaultValue}' \
+http://localhost:1234/v1/prems
+
+# Get
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:1234/v1/prems
+
+# Put
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"INR": defaultValue,"Trisha": "sample string"}' \
+http://localhost:1234/v1/prems/123
+
+# Put
+### wrong id passed in param
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"INR": defaultValue,"Trisha": "sample string"}' \
+http://localhost:1234/v1/prems/1234
+
+# Get  (retrieve specific Prem)
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:1234/v1/prems/123
+
+# Delete
+curl -X DELETE -H "Content-Type: application/json" \
+http://localhost:1234/v1/prems/123
+
+    
+
+# when mysql throws error about server connection, fire below commands
+# CREATE USER 'root'@'%' IDENTIFIED BY 'password';
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
